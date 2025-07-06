@@ -1,0 +1,47 @@
+<div class=" bg-white rounded-2xl shadow-2xl p-6 flex flex-col gap-4 text-gray-800 overflow-hidden" style="min-width: 950px">
+  <!-- Encabezado -->
+  <div class="flex items-center justify-between border-b pb-2">
+    <h2 class="text-2xl font-bold">Historial de sensores</h2>
+    <button
+      class="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all"
+      (click)="cerrar()"
+    >
+      Cerrar
+    </button>
+  </div>
+
+  <!-- Contenido -->
+  @if (datos.length === 0) {
+    <div class="flex-1 flex items-center justify-center text-gray-500 text-lg">
+      No hay datos disponibles.
+    </div>
+  } @else {
+    <div class="overflow-auto rounded-lg border max-h-[70vh]">
+      <table class="min-w-full divide-y divide-gray-200 text-sm text-left">
+        <thead class="bg-gray-50 sticky top-0 z-10 shadow-sm">
+        <tr>
+          <th class="px-6 py-3 font-semibold">Fecha</th>
+          <th class="px-6 py-3 font-semibold">Lat</th>
+          <th class="px-6 py-3 font-semibold">Lon</th>
+          <th class="px-6 py-3 font-semibold">Temp</th>
+          <th class="px-6 py-3 font-semibold">Velocidad</th>
+          <th class="px-6 py-3 font-semibold">Combustible</th>
+        </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          @for (d of datos; track d.idSensorData) {
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-6 py-3">{{ d.fecha | date:'short' }}</td>
+              <td class="px-6 py-3">{{ d.latitud }}</td>
+              <td class="px-6 py-3">{{ d.longitud }}</td>
+              <td class="px-6 py-3">{{ d.temperatura }}°C</td>
+              <td class="px-6 py-3">{{ d.velocidad }} km/h</td>
+              <td class="px-6 py-3">{{ d.nivelCombustible }}%</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
+
