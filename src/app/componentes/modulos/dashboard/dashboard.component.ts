@@ -4,7 +4,7 @@ import { Renderer2 } from '@angular/core';
 import {VehiculoService} from '../../../core/services/VehiculoService';
 import {VehiculoUbicacion} from '../../../core/models/VehiculoUbicacion.model';
 import {WebSocketService} from '../../../core/services/web-socket.service';
-import {HistorialModalComponent} from '../../modals/historial-modal.component';
+import {HistorialModalComponent} from '../../modals/historial-modal/historial-modal.component';
 import {MatDialog} from '@angular/material/dialog';
 import {LoginService} from '../../../core/services/login.service';
 import {DatePipe} from '@angular/common';

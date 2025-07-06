@@ -24,7 +24,7 @@ export class SimuladorService {
   constructor(private http: HttpClient) {}
 
   iniciarSimulacion(): void {
-    this.intervalSub = interval(3000).subscribe(() => {
+    this.intervalSub = interval(5000).subscribe(() => {
       const coord = COORDENADAS_SIMULADAS[this.index];
 
       const payload = {

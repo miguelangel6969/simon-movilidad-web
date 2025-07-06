@@ -13,4 +13,3 @@ export const credentialsInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(modifiedReq);
 };
-
